@@ -1,0 +1,29 @@
+{% extends "myapp/index.html" %}
+{% load static %}
+{% block title %}Home{% endblock title %}
+{% block content %}
+
+<div class="flex items-start p-6 rounded-lg shadow-md">
+    <img src="{% static 'myproject/images/fooddrone.jpg' %}" height="700" width="700" class="object-cover rounded-lg shadow-lg mr-10">
+    <div class="max-w-lg"> 
+        <h2 class="text-xl font-semibold mb-4">Food Provider Drone Service</h2>
+        <p class="mb-2">
+            The Food Provider Drone Service is an innovative approach to enhance food accessibility, especially in areas impacted by disasters or logistical challenges. We partner with local food banks, restaurants, and community organizations to deliver fresh meals and essential supplies directly to those in need.
+        </p>
+        <p>
+            Our advanced drone fleet is equipped to transport a variety of food items, ensuring that nutritious meals reach individuals and families quickly and efficiently. With real-time tracking, precise navigation, and a team dedicated to community service and drone technology, we are redefining food delivery in emergencies and daily life. Our mission is to combat hunger and ensure that everyone has access to healthy food options, regardless of their circumstances.
+        </p>
+    </div>
+    
+</div>
+
+<form method="POST" action="{% url 'myapp:food_purpose' %}">
+    {% csrf_token %}
+    <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+        Food Purpose Help
+    </button>
+</form>
+{% endblock %}
+{% block style %}
+    color:white
+{% endblock %}

@@ -1,0 +1,32 @@
+{% extends "myapp/index.html" %}
+{% load static %}
+{% block title %}Home{% endblock title %}
+{% block content %}
+
+<div class="flex items-start p-6 rounded-lg shadow-md">
+    <img src="{% static 'myproject/images/rescue drone.jpg' %}" height="700" width="700" class="object-cover rounded-lg shadow-lg mr-10">
+    <div class="max-w-lg"> 
+        <h2 class="text-xl font-semibold mb-4">Immediate Rescue Drone Service</h2>
+        <p class="mb-2">
+            The Immediate Rescue Drone Service is a groundbreaking initiative designed to enhance emergency response in disaster situations. We work closely with first responders, emergency services, and governmental agencies to deliver essential aid rapidly to affected areas, ensuring that help arrives without delay.
+        </p>
+        <p>
+            Our state-of-the-art drone fleet is equipped to transport vital supplies, including food, water, medical kits, and emergency equipment, directly to those in need. With features like real-time tracking, precise navigation, and a specialized team trained in emergency response and drone technology, we are reshaping the landscape of immediate aid delivery. Our commitment is to save lives and provide timely assistance during crises, making a meaningful difference in communities impacted by disasters.
+        </p>
+    </div>
+    
+</div>
+
+<form method="POST" action="{% url 'myapp:immediate' %}">
+    {% csrf_token %}
+    <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+     Immediate Help
+    </button>
+</form>
+
+
+
+{% endblock %}
+{% block style %}
+    color:white
+{% endblock %}

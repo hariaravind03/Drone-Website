@@ -1,0 +1,24 @@
+{% extends "myapp/index.html" %}
+{% load static %}
+{% block title %}Home{% endblock title %}
+{% block content %}
+
+<div class="flex items-start p-6  rounded-lg shadow-md">
+    <img src="{% static 'myproject/images/disasterdrone.jpg' %}" height="700" width="700" class="object-cover rounded-lg shadow-lg mr-10">
+    <div class="max-w-lg">
+        <h2 class="text-xl font-semibold mb-4">Aero Aid Drone Service</h2>
+        <p class="mb-2">
+            Aero Aid Drone Service is a pioneering initiative connected with the NGO sector and the Government of India, dedicated to enhancing disaster management efforts across the nation. We leverage advanced drone technology to provide efficient, real-time aerial support for various disaster response operations, including search and rescue missions, damage assessment, and logistical support.
+        </p>
+        <p>
+            Our services are designed to improve situational awareness, enabling rapid decision-making and effective resource allocation during emergencies. With a skilled team of trained professionals and a fleet of state-of-the-art drones, we are committed to ensuring the safety and well-being of communities across India. Together, we strive to mitigate the impact of disasters and enhance the resilience of our nation through innovation and collaboration.
+        </p>
+    </div>
+</div>
+
+
+
+{% endblock %}
+{% block style %}
+    color:white
+{% endblock %}

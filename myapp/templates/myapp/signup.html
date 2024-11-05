@@ -1,0 +1,68 @@
+{% extends "myapp/index.html" %}
+
+{%block title%}Sign Up{%endblock%}
+
+{%block content%}
+<div class="w-1/2 p-8 my-6 mx-auto bg-black rounded-xl text-center">
+    <h1 class="mb-6 text-3xl text-white font-semibold">Sign Up</h1>
+
+    <form method="post" action=".">
+        {% csrf_token %}
+
+        <div class="mb-3">
+            <label class="inline-block mb-2 text-white">Name</label>
+            {{form.username}}
+        </div>
+
+        <div class="mb-3">
+            <label class="inline-block mb-2 text-white">Email</label>
+            {{form.email}}
+        </div>
+
+        <div class="mb-3">
+            <label class="inline-block mb-2 text-white">Mobile No.</label>
+            {{form.mobile}}
+        </div>
+
+        <div class="mb-3">
+            <label class="inline-block mb-2 text-white">Alternate Mobile No.</label>
+            {{form.mobile1}}
+        </div>
+
+        <div class="mb-3">
+            <label class="inline-block mb-2 text-white">Location Co-ordinates(From google chrome)</label>
+            {{form.address}}
+        </div>
+
+        <div class="mb-3">
+            <label class="inline-block mb-2 text-white">No. of people in your location</label>
+            {{form.noofpeople}}
+        </div>
+
+        <div class="mb-3">
+            <label class="inline-block mb-2 text-white">No. of old aged or infant in your location</label>
+            {{form.oldorinf}}
+        </div>
+
+        <div class="mb-3">
+            <label class="inline-block mb-2 text-white">Password</label>
+            {{form.password1}}
+        </div>
+
+        <div class="mb-3">
+            <label class="inline-block mb-2 text-white">Repeat Password</label>
+            {{form.password2}}
+        </div>
+
+        {% if form.errors or form.non_field_errors%}
+               <div class="mb-3 p-6 bg-red-100 rounded-xl">
+                     {% for field  in form  %}
+                         {{field.errors}}
+                     {% endfor %}
+                     {{form.non_field_errors}}
+               </div>
+        {% endif %}
+
+        <button class="mt-5 py-3 px-6 text-lg bg-violet-500 hover:text-violet-700 hover:bg-white rounded-xl text-white font-semibold">Submit</button>
+</div>
+{%endblock%}

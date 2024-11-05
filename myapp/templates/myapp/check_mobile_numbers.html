@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Check Mobile Numbers</title>
+</head>
+<body>
+    <h1>Users with Mobile Numbers</h1>
+    <ul>
+        {% for profile in users_with_mobile %}
+            <li>User: {{ profile.user.username }} | Mobile: {{ profile.mobile }}</li>
+        {% empty %}
+            <li>No users have saved mobile numbers.</li>
+        {% endfor %}
+    </ul>
+
+    <h1>Users without Mobile Numbers</h1>
+    <ul>
+        {% for profile in users_without_mobile %}
+            <li>User: {{ profile.user.username }} has not saved a mobile number.</li>
+        {% empty %}
+            <li>All users have saved mobile numbers.</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

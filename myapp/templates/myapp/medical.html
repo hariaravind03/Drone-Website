@@ -1,0 +1,31 @@
+{% extends "myapp/index.html" %}
+{% load static %}
+{% block title %}Home{% endblock title %}
+{% block content %}
+
+<div class="flex items-start p-6 rounded-lg shadow-md">
+    <img src="{% static 'myproject/images/medical drone.jpg' %}" height="700" width="700" class="object-cover rounded-lg shadow-lg mr-10">
+    <div class="max-w-lg">
+        <h2 class="text-xl font-semibold mb-4">Medical Aid Drone Service</h2>
+        <p class="mb-2">
+            Medical Aid Drone Service is an innovative solution aimed at revolutionizing healthcare delivery, particularly in remote and underserved areas. We collaborate with healthcare institutions and government bodies to provide fast, reliable transportation of critical medical supplies, including medications, vaccines, blood samples, and diagnostic tools.
+        </p>
+        <p>
+            Our cutting-edge drone fleet ensures that life-saving resources reach those in need, regardless of location or terrain. With real-time tracking, advanced navigation systems, and a dedicated team of medical and drone technology experts, we are transforming emergency medical response and routine healthcare logistics. Through our efforts, we are committed to improving access to healthcare and reducing response times during medical emergencies across the nation.
+        </p>
+    </div>
+</div>
+
+<form method="POST" action="{% url 'myapp:medical_purpose' %}">
+    {% csrf_token %}
+    <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+        Medical Purpose Help
+    </button>
+</form>
+
+
+
+{% endblock %}
+{% block style %}
+    color:white
+{% endblock %}
